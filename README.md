@@ -28,7 +28,7 @@ This is part of the Full Stack Software Engineer program organized by Alx Africa
 ## Author
 
 - [Bakare Muideen Adeleke](https://www.github.com/adeleke123)
-- [Linkedin](https://www.linkedin.com/in/muideenadeleke-mypage)
+- [Linkedin](https://www.linkedin.com/in/muideenadeleke)
 
 
 ## Acknowledgements
