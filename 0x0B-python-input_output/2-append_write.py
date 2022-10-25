@@ -1,12 +1,16 @@
 #!/usr/bin/python3
-"""JSON string"""
-import json
+"""Append to a file"""
 
 
-def to_json_string(my_obj):
+def append_write(filename="", text=""):
     """
-    Returns the JSON representation of an object (string)
+    Append s string to the end of a text file.
+    If file do not exist - it creates it
+
     Args:
-        my_obj: dict
+        filename: string
+        text: string
+    Returns: the number of characters added (int)
     """
-    return json.dumps(my_obj)
+    with open(filename, mode="a", encoding="utf-8") as txt_file:
+        return txt_file.write(text)
