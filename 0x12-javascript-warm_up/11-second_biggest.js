@@ -1,13 +1,13 @@
 #!/usr/bin/node
-function findSecondLargest(args) {
-  if (args.length <= 1) {
+function findSecondLargest() {
+  if (arguments.length < 2) {
     console.log(0);
     return;
   }
 
-  let largest = -Infinity;
-  let secondLargest = -Infinity;
-  for (const arg of args) {
+  let largest = Number.MIN_SAFE_INTEGER;
+  let secondLargest = Number.MIN_SAFE_INTEGER;
+  for (const arg of arguments) {
     const num = Number(arg);
     if (num > largest) {
       secondLargest = largest;
@@ -18,5 +18,3 @@ function findSecondLargest(args) {
   }
   console.log(secondLargest);
 }
-
-findSecondLargest(process.argv.slice(2));
