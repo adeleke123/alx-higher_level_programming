@@ -25,3 +25,5 @@ for row in results:
 """Close the cursor and connection"""
 cur.close()
 conn.close()
+
+if __name__ == "__main__":
