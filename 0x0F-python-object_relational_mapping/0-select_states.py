@@ -1,27 +1,30 @@
 #!/usr/bin/python3
+"""SelectStates"""
 import MySQLdb
 import sys
 
-"""Connect to the MySQL server"""
-conn = MySQLdb.connect(
-    host='localhost',
-    port=3306,
-    user = sys.argv[1],
-    passwd = sys.argv[2],
-    db = sys.argv[3]
-)
 
-"""Create a cursor object"""
-cur = conn.cursor()
+def select_states():
+    """Gets states from database"""
 
-"""Execute the SELECT statement"""
-cur.execute("SELECT * FROM states ORDER BY states.id ASC")
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database = sys.argv[3]
 
-"""Fetch and print the results"""
-results = cur.fetchall()
-for row in results:
-    print(row)
+    db = MySQLdb.connect(host='localhost',
+                         port=3306,
+                         user=username,
+                         passwd=password,
+                         db=database
+                         )
+    cur = db.cursor()
+    cur.execute('SELECT * FROM states ORDER BY id ASC')
+    rows = cur.fetchall()
+    for row in rows:
+        print(row)
+    cur.close()
+    db.close()
 
-"""Close the cursor and connection"""
-cur.close()
-conn.close()
+
+if __name__ == "__main__":
+    select_states()
