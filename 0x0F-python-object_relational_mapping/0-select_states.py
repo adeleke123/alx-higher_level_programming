@@ -6,9 +6,9 @@ import sys
 conn = MySQLdb.connect(
     host='localhost',
     port=3306,
-    user=sys.argv[1],
-    passwd=sys.argv[2],
-    db=sys.argv[3]
+    user = sys.argv[1],
+    passwd = sys.argv[2],
+    db = sys.argv[3]
 )
 
 """Create a cursor object"""
@@ -25,5 +25,3 @@ for row in results:
 """Close the cursor and connection"""
 cur.close()
 conn.close()
-
-if __name__ == "__main__":
