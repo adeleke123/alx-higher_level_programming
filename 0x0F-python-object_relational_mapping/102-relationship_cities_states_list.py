@@ -1,16 +1,14 @@
 #!/usr/bin/python3
-"""
-All states via SQLAlchemy
-"""
-from sqlalchemy import text
+"""State city module"""
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
-from model_state import Base, State
+from relationship_state import Base, State
+from relationship_city import City
 import sys
 
 
-def fetch_all():
-    """Gets all states in the database"""
+def fetch_city_state():
+    """Gets all states cities in database"""
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
@@ -22,10 +20,13 @@ def fetch_all():
     Session = sessionmaker()
     Session.configure(bind=engine)
     session = Session()
-    for state in session.query(State).order_by(State.id).all():
-        print("{}: {}".format(state.id, state.name))
+
+    for city in session.query(City).order_by(City.id).all():
+        print("{}: {} -> {}".format(city.id, city.name, city.state.name))
+
+    session.commit()
     session.close()
 
 
 if __name__ == "__main__":
-    fetch_all()
+    fetch_city_state()

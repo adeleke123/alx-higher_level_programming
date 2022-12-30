@@ -1,16 +1,14 @@
 #!/usr/bin/python3
-"""
-All states via SQLAlchemy
-"""
-from sqlalchemy import text
+"""City relationship"""
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
-from model_state import Base, State
+from relationship_state import Base, State
+from relationship_city import City
 import sys
 
 
-def fetch_all():
-    """Gets all states in the database"""
+def create_state_cities():
+    """Improves all states"""
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
@@ -22,10 +20,15 @@ def fetch_all():
     Session = sessionmaker()
     Session.configure(bind=engine)
     session = Session()
-    for state in session.query(State).order_by(State.id).all():
-        print("{}: {}".format(state.id, state.name))
+
+    new_state = State(name='California')
+    new_city = City(name='San Francisco')
+    new_state.cities.append(new_city)
+    session.add(new_state)
+    session.add(new_city)
+    session.commit()
     session.close()
 
 
 if __name__ == "__main__":
-    fetch_all()
+    create_state_cities()
