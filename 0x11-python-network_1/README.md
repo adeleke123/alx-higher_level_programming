@@ -76,12 +76,14 @@ You are not allow to import packages other than urllib and sys
 The value of this variable is different for each request
 You don’t need to check arguments passed to the script (number or type)
 You must use a with statement
+```
 guillaume@ubuntu:~/0x11$ ./1-hbtn_header.py https://alx-intranet.hbtn.io
 ade2627e-41dd-4c34-b9d9-a0fa0f47b237
 guillaume@ubuntu:~/0x11$ 
 guillaume@ubuntu:~/0x11$ ./1-hbtn_header.py https://alx-intranet.hbtn.io
 6593e1f5-1b4b-4c9f-9c0e-72ab525b850f
 guillaume@ubuntu:~/0x11$ 
+```
 Repo:
 
 GitHub repository: alx-higher_level_programming
@@ -98,10 +100,11 @@ You are not allowed to import packages other than urllib and sys
 You don’t need to check arguments passed to the script (number or type)
 You must use the with statement
 Please test your script in the sandbox provided, using the web server running on port 5000
-
+```
 guillaume@ubuntu:~/0x11$ ./2-post_email.py http://0.0.0.0:5000/post_email hr@holbertonschool.com
 Your email is: hr@holbertonschool.com
 guillaume@ubuntu:~/0x11$ 
+```
 Repo:
 
 GitHub repository: alx-higher_level_programming
@@ -118,7 +121,7 @@ You are not allowed to import other packages than urllib and sys
 You don’t need to check arguments passed to the script (number or type)
 You must use the with statement
 Please test your script in the sandbox provided, using the web server running on port 5000
-
+```
 guillaume@ubuntu:~/0x11$ ./3-error_code.py http://0.0.0.0:5000
 Index
 guillaume@ubuntu:~/0x11$ ./3-error_code.py http://0.0.0.0:5000/status_401
@@ -128,6 +131,7 @@ Error code: 404
 guillaume@ubuntu:~/0x11$ ./3-error_code.py http://0.0.0.0:5000/status_500
 Error code: 500
 guillaume@ubuntu:~/0x11$ 
+```
 Repo:
 
 GitHub repository: alx-higher_level_programming
@@ -141,11 +145,13 @@ Write a Python script that fetches https://alx-intranet.hbtn.io/status
 You must use the package requests
 You are not allow to import packages other than requests
 The body of the response must be display like the following example (tabulation before -)
+```
 guillaume@ubuntu:~/0x11$ ./4-hbtn_status.py | cat -e
 Body response:$
     - type: <class 'str'>$
     - content: OK$
 guillaume@ubuntu:~/0x11$ 
+```
 Repo:
 
 GitHub repository: alx-higher_level_programming
