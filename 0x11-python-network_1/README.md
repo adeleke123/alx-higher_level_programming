@@ -55,12 +55,14 @@ You must use the package urllib
 You are not allowed to import any packages other than urllib
 The body of the response must be displayed like the following example (tabulation before -)
 You must use a with statement
+```
 guillaume@ubuntu:~/0x11$ ./0-hbtn_status.py | cat -e
 Body response:$
     - type: <class 'bytes'>$
     - content: b'OK'$
     - utf8 content: OK$
 guillaume@ubuntu:~/0x11$ 
+```
 Repo:
 
 GitHub repository: alx-higher_level_programming
@@ -166,12 +168,14 @@ You must use the packages requests and sys
 You are not allow to import other packages than requests and sys
 The value of this variable is different for each request
 You don’t need to check script arguments (number and type)
+```
 guillaume@ubuntu:~/0x11$ ./5-hbtn_header.py https://alx-intranet.hbtn.io
 5e52e160-c822-4669-8b3a-8b3bbca7b090
 guillaume@ubuntu:~/0x11$ 
 guillaume@ubuntu:~/0x11$ ./5-hbtn_header.py https://alx-intranet.hbtn.io
 eaceaf35-bc0f-4f74-994a-7be0728ec654
 guillaume@ubuntu:~/0x11$ 
+```
 Repo:
 
 GitHub repository: alx-higher_level_programming
@@ -187,10 +191,11 @@ You must use the packages requests and sys
 You are not allowed to import packages other than requests and sys
 You don’t need to error check arguments passed to the script (number or type)
 Please test your script in the sandbox provided, using the web server running on port 5000
-
+```
 guillaume@ubuntu:~/0x11$ ./6-post_email.py http://0.0.0.0:5000/post_email hr@holbertonschool.com
 Your email is: hr@holbertonschool.com
 guillaume@ubuntu:~/0x11$ 
+```
 Repo:
 
 GitHub repository: alx-higher_level_programming
