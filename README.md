@@ -17,6 +17,7 @@ This is part of the Full Stack Software Engineer program organized by Alx Africa
 * [0x08. Python - More Classes and Objects](https://github.com/adeleke123/alx-higher_level_programming/tree/main/0x08-python-more_classes)
 * [0x09. Python - Everything is object](https://github.com/adeleke123/alx-higher_level_programming/tree/main/0x09-python-everything_is_object)
 * [0x0A. python - inheritance](https://github.com/adeleke123/alx-higher_level_programming/tree/master/0x0A-python-inheritance)
+* [0x0B. python - input_output](https://github.com/adeleke123/alx-higher_level_programming/tree/master/0x0B-python-input_output)
 
 
 ## WARNING!
