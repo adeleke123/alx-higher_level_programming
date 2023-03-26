@@ -1,12 +1,9 @@
 # Higher-level programming & Algorithm
 
 This repository features my solutions to the activities assigned during the Higher-level Programming & Algorithm projects, 
-as part of the Full Stack Software Engineer program organized by Alx Africa. The program ran from June 2022 and will end in July 2023,
-and I was part of the cohort08.
-
-The projects were written primarily in Python, but also involved the implementation of other programming languages such as C, JavaScript, 
-and shell. As a result, the projects have helped me to develop a diverse range of skills and knowledge 
-in software engineering and programming."
+as part of the Full Stack Software Engineer program organized by ALX Africa. The program ran from June 2022 and will end in July 2023,
+and I was part of the cohort08. The projects were written primarily in Python, but also involved the implementation of other programming languages such as C, JavaScript, and shell. As a result, the projects have helped me to develop a diverse range of skills and knowledge 
+in software engineering and programming.
 
 ## Table of contents
 
@@ -34,10 +31,15 @@ in software engineering and programming."
 * [0x15. javascript - web_jquery](https://github.com/adeleke123/alx-higher_level_programming/tree/master/0x15-javascript-web_jquery)
 
 
-## WARNING!
+## Important Notice:
 
-* This repo is done as a school assignment. Beware of copying my responses. I recommend you to read resources and come up with your own solutions instead. Feel free to reach out for help!
-* This repo may contain some errors. If you notice any, please add a pull request.
+* This repository was created as part of a school assignment. 
+* Please be aware that copying my responses is strictly prohibited. 
+* I highly recommend that you read the relevant resources and develop your own solutions instead. 
+* If you require assistance or have any questions, feel free to contact me.
+* It is possible that this repository may contain some errors. 
+* If you happen to notice any, please consider contributing by submitting a pull request. 
+* Your help is greatly appreciated.
 
 
 
@@ -48,7 +50,16 @@ in software engineering and programming."
 
 
 ## Acknowledgements
-All work contained in this project was completed as part of the curriculum for ALX Africa Software Engineering program built upon Holberton School projects and materials. Holberton School is a campus-based full-stack software engineering program that prepares students for careers in the tech industry using project-based peer learning.
+
+* I would like to acknowledge that all the work included in this project was completed as part of the curriculum 
+* for the ALX Africa Software Engineering program.
+* The program is built upon Holberton School projects and materials, 
+* which is a campus-based full-stack software engineering program 
+* that employs project-based peer learning to prepare students for careers in the tech industry.
+* I would like to express my gratitude to both ALX Africa and Holberton School
+* for providing me with the opportunity to learn and develop my skills in software engineering. 
+* Their commitment to excellence has helped me to become a better programmer 
+* and equipped me with the knowledge and skills necessary to succeed in the tech industry.
 
 
 ## Credits
