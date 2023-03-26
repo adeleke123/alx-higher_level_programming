@@ -1,8 +1,12 @@
 # Higher-level programming & Algorithm
 
-This repository contains solution programs written for the Higher-level programming & Algorithm projects/tasks.
-This is part of the Full Stack Software Engineer program organized by Alx Africa which occurred throughout the duration of the year 2022 June, cohort08 curriculum.
- The projects are written in py programming language.
+This repository features my solutions to the activities assigned during the Higher-level Programming & Algorithm projects, 
+as part of the Full Stack Software Engineer program organized by Alx Africa. The program ran from June 2022 and will end in July 2023,
+and I was part of the cohort08.
+
+The projects were written primarily in Python, but also involved the implementation of other programming languages such as C, JavaScript, 
+and shell. As a result, the projects have helped me to develop a diverse range of skills and knowledge 
+in software engineering and programming."
 
 ## Table of contents
 
