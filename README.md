@@ -1,4 +1,4 @@
-# Higher-level programming & Algorithm
+# Higher-Level Programming & Algorithm
 
 This repository features my solutions to the activities assigned during the Higher-level Programming & Algorithm projects, 
 as part of the Full Stack Software Engineer program organized by ALX Africa. The program ran from June 2022 and will end in July 2023,
