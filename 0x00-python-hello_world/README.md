@@ -140,6 +140,10 @@ Namespaces are one honking great idea -- let's do more of those!
 
 `Pycodestyle` is now the [new standard of Python style code](https://alx-intranet.hbtn.io/rltoken/UQ25jC6sA5XqZl6ZZIdAaw "new standard of Python style code")
 
+
+![image](https://github.com/adeleke123/alx-higher_level_programming/assets/51156057/59f072fc-230a-4ead-9857-1fb94ad4e342)
+
+
 Tasks
 -----
 
@@ -619,3 +623,86 @@ carrie@ubuntu:~/0x00$
 -   GitHub repository: `alx-higher_level_programming`
 -   Directory: `0x00-python-hello_world`
 -   File: `10-check_cycle.c, lists.h`
+
+**11. Hello, write    #advanced**
+
+- Write a Python script that prints exactly `and that piece of art is useful - Dora Korpar, 2015-10-19`, followed by a new line.
+
+- Use the function `write` from the `sys` module
+- You are not allowed to use `print`
+- Your script should print to `stderr`
+- Your script should exit with the status code `1`
+
+```
+guillaume@ubuntu:~/py/0x00$ ./100-write.py
+and that piece of art is useful - Dora Korpar, 2015-10-19
+guillaume@ubuntu:~/py/0x00$ echo $?
+1
+guillaume@ubuntu:~/py/0x00$ ./100-write.py 2> q
+guillaume@ubuntu:~/py/0x00$ cat q
+and that piece of art is useful - Dora Korpar, 2015-10-19
+guillaume@ubuntu:~/py/0x00$ 
+
+```
+**Repo:**
+
+- GitHub repository: `alx-higher_level_programming`
+- Directory: `0x00-python-hello_world`
+- File: `100-write.py`
+    
+**12. Compile   #advanced**
+
+- Write a script that compiles a Python script file.
+
+- The Python file name will be stored in the environment variable `$PYFILE`
+
+- The output filename has to be `$PYFILEc` (ex: `export PYFILE=my_main.py => output filename: my_main.pyc`)
+```
+guillaume@ubuntu:~/py/0x00$ cat main.py 
+#!/usr/bin/python3
+print("Best School")
+
+guillaume@ubuntu:~/py/0x00$ export PYFILE=main.py
+guillaume@ubuntu:~/py/0x00$ ./101-compile
+Compiling main.py ...
+guillaume@ubuntu:~/py/0x00$ ls
+101-compile  main.py  main.pyc
+guillaume@ubuntu:~/py/0x00$ cat main.pyc | zgrep -c "Best School"
+1
+guillaume@ubuntu:~/py/0x00$ od -t x1 main.pyc # SYSTEM DEPENDANT => CAN BE DIFFERENT
+0000000 ee 0c 0d 0a 91 26 3e 58 31 00 00 00 e3 00 00 00
+0000020 00 00 00 00 00 00 00 00 00 02 00 00 00 40 00 00
+0000040 00 73 0e 00 00 00 65 00 00 64 00 00 83 01 00 01
+0000060 64 01 00 53 29 02 7a 10 48 6f 6c 62 65 72 74 6f
+0000100 6e 20 53 63 68 6f 6f 6c 4e 29 01 da 05 70 72 69
+0000120 6e 74 a9 00 72 02 00 00 00 72 02 00 00 00 fa 07
+0000140 6d 61 69 6e 2e 70 79 da 08 3c 6d 6f 64 75 6c 65
+0000160 3e 02 00 00 00 73 00 00 00 00
+0000172
+guillaume@ubuntu:~/py/0x00$ 
+```
+**Repo:**
+
+- GitHub repository: `alx-higher_level_programming`
+- Directory: `0x00-python-hello_world`
+- File: `101-compile`
+    
+**13. ByteCode -> Python #1  #advanced**
+
+- Write the Python function `def magic_calculation(a, b):` that does exactly the same as the following Python bytecode:
+```
+
+  3           0 LOAD_CONST               1 (98)
+              3 LOAD_FAST                0 (a)
+              6 LOAD_FAST                1 (b)
+              9 BINARY_POWER
+             10 BINARY_ADD
+             11 RETURN_VALUE
+```
+- Tip: [Python bytecode](https://docs.python.org/3.4/library/dis.html)
+
+**Repo:**
+
+- GitHub repository: `alx-higher_level_programming`
+- Directory: `0x00-python-hello_world`
+- File: `102-magic_calculation.py`
