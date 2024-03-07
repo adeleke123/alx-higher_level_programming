@@ -248,7 +248,8 @@ guillaume@ubuntu:~/0x02$
 
 Remember how you did (or did not) do it in C? `#pythoniscool`
 
-![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/621c6dd72e1acff708141f3fab6dfa6ff37c5ee6.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20211118%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20211118T160935Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=e37063f357768ba4756a7cfd2a7d2e3cc493739a75deddf94fa8e629583245c1)
+![image](https://github.com/adeleke123/alx-higher_level_programming/assets/51156057/fffa18b1-e7be-4d9d-a2ce-d5425e6a4e57)
+
 
 **Repo:**
 
@@ -491,3 +492,28 @@ Tips: [Python bytecode](https://alx-intranet.hbtn.io/rltoken/FMdg7W8NKJZKRuFGG8m
 -   GitHub repository: `alx-higher_level_programming`
 -   Directory: `0x02-python-import_modules`
 -   File: `102-magic_calculation.py`
+
+**9. Fast alphabet   #advanced**
+
+Write a program that prints the alphabet in uppercase, followed by a new line.
+
+- Your program should be maximum 3 lines long
+**You are not allowed to use:**
+1. any loops
+2. any conditional statements
+3. `str.join()`
+4. any string literal
+5. any system calls
+```
+guillaume@ubuntu:~/0x02$ ./103-fast_alphabet.py
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+guillaume@ubuntu:~/0x02$ wc -l 103-fast_alphabet.py
+3 103-fast_alphabet.py
+guillaume@ubuntu:~/0x02$
+
+```
+**Repo:**
+
+- GitHub repository: `alx-higher_level_programming`
+- Directory: `0x02-python-import_modules`
+- File: `103-fast_alphabet.py`
