@@ -498,8 +498,10 @@ Tips: [Python bytecode](https://alx-intranet.hbtn.io/rltoken/FMdg7W8NKJZKRuFGG8m
 Write a program that prints the alphabet in uppercase, followed by a new line.
 
 - Your program should be maximum 3 lines long
+
 - **You are not allowed to use:**
-1 any loops
+
+1. any loops
 2. any conditional statements
 3. `str.join()`
 4. any string literal
