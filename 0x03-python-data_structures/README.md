@@ -178,9 +178,7 @@ guillaume@ubuntu:~/0x03$
 -   Directory: `0x03-python-data_structures`
 -   File: `2-replace_in_list.py`
 
-### 3\. Print a list of integers... in reverse!
-
-mandatory
+### 3\. Print a list of integers... in reverse!   mandatory
 
 Write a function that prints all integers of a list, in reverse order.
 
@@ -215,9 +213,7 @@ guillaume@ubuntu:~/0x03$
 -   Directory: `0x03-python-data_structures`
 -   File: `3-print_reversed_list_integer.py`
 
-### 4\. Replace in a copy
-
-mandatory
+### 4\. Replace in a copy              mandatory
 
 Write a function that replaces an element in a list at a specific position without modifying the original list (like in C).
 
@@ -729,18 +725,17 @@ carrie@ubuntu:0x03$
 -   Directory: `0x03-python-data_structures`
 -   File: `13-is_palindrome.c, lists.h`
 
-### 14\. CPython #0: Python lists
-
-#advanced
+### 14\. CPython #0: Python lists     #advanced
 
 CPython is the reference implementation of the Python programming language. Written in C, CPython is the default and most widely used implementation of the language.\
 Since we now know a bit of C, we can look at what is happening under the hood of Python. Let's have fun with Python and C, and let's look at what makes Python so easy to use.
 
 -   All your files will be interpreted/compiled on Ubuntu 14.04 LTS
 
-![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/7e7834b535261d05532fb80a9304f7051c4ad7ac.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20211121%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20211121T180457Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=665e724d14ace604a30295cda2420ee7685b2123a40ff31d766039451a58447b)
+![image](https://github.com/adeleke123/alx-higher_level_programming/assets/51156057/0266d4fc-1119-4f7a-bb41-794da2564cf1)
 
-Create a C function that prints some basic info about Python lists.
+
+- Create a C function that prints some basic info about Python lists.
 
 -   Prototype: `void print_python_list_info(PyObject *p);`
 -   Format: see example
