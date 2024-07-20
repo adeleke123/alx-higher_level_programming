@@ -105,37 +105,38 @@ guillaume@ubuntu:~/0x04$
 -   File: `0-square_matrix_simple.py`
 
 
-### 1\. Search and replace
+### 1. Search and replace
+mandatory
 
 Write a function that replaces all occurrences of an element by another in a new list.
-editing stopped here
 
--   Prototype: `def element_at(my_list, idx):`
--   If `idx` is negative, the function should return `None`
--   If `idx` is out of range (> of number of element in `my_list`), the function should return `None`
--   You are not allowed to import any module
--   You are not allowed to use `try/except`
-
+- Prototype: `def search_replace(my_list, search, replace):`
+- `my_list` is the initial list
+- `search` is the element to replace in the list
+- `replace` is the new element
+You are not allowed to import any module
 ```
-guillaume@ubuntu:~/0x03$ cat 1-main.py
+guillaume@ubuntu:~/0x04$ cat 1-main.py
 #!/usr/bin/python3
-element_at = __import__('1-element_at').element_at
+search_replace = __import__('1-search_replace').search_replace
 
-my_list = [1, 2, 3, 4, 5]
-idx = 3
-print("Element at index {:d} is {}".format(idx, element_at(my_list, idx)))
+my_list = [1, 2, 3, 4, 5, 4, 2, 1, 1, 4, 89]
+new_list = search_replace(my_list, 2, 89)
 
-guillaume@ubuntu:~/0x03$ ./1-main.py
-Element at index 3 is 4
-guillaume@ubuntu:~/0x03$
+print(new_list)
+print(my_list)
+
+guillaume@ubuntu:~/0x04$ ./1-main.py
+[1, 89, 3, 4, 5, 4, 89, 1, 1, 4, 89]
+[1, 2, 3, 4, 5, 4, 2, 1, 1, 4, 89]
+guillaume@ubuntu:~/0x04$ 
 
 ```
-
 **Repo:**
 
--   GitHub repository: `alx-higher_level_programming`
--   Directory: `0x04-python-more_data_structures`
--   File: `0-square_matrix_simple.py`
+- GitHub repository: `alx-higher_level_programming`
+- Directory: `0x04-python-more_data_structures`
+- File: `1-search_replace.py`
 
 ### 2\. Replace element
 
