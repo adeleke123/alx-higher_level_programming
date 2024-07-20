@@ -138,72 +138,442 @@ guillaume@ubuntu:~/0x04$
 - Directory: `0x04-python-more_data_structures`
 - File: `1-search_replace.py`
 
-### 2\. Replace element
-
+### 2. Unique addition
 mandatory
 
-Write a function that replaces an element of a list at a specific position (like in C).
+Write a function that adds all unique integers in a list (only once for each integer).
 
--   Prototype: `def replace_in_list(my_list, idx, element):`
--   If `idx` is negative, the function should not modify anything, and returns the original list
--   If `idx` is out of range (> of number of element in `my_list`), the function should not modify anything, and returns the original list
--   You are not allowed to import any module
--   You are not allowed to use `try/except`
+- Prototype: `def uniq_add(my_list=[]):`
+- You are not allowed to import any module
+```
+guillaume@ubuntu:~/0x04$ cat 2-main.py
+#!/usr/bin/python3
+uniq_add = __import__('2-uniq_add').uniq_add
+
+my_list = [1, 2, 3, 1, 4, 2, 5]
+result = uniq_add(my_list)
+print("Result: {:d}".format(result))
+
+guillaume@ubuntu:~/0x04$ ./2-main.py
+Result: 15
+guillaume@ubuntu:~/0x04$ 
 
 ```
-guillaume@ubuntu:~/0x03$ cat 2-main.py
+**Repo:**
+
+- GitHub repository: `alx-higher_level_programming`
+- Directory: `0x04-python-more_data_structures`
+- File: `2-uniq_add.py`
+
+### 3. Present in both
+mandatory
+
+Write a function that returns a set of common elements in two sets.
+
+- Prototype: def common_elements(set_1, set_2):
+- You are not allowed to import any module
+```
+guillaume@ubuntu:~/0x04$ cat 3-main.py
 #!/usr/bin/python3
-replace_in_list = __import__('2-replace_in_list').replace_in_list
+common_elements = __import__('3-common_elements').common_elements
 
-my_list = [1, 2, 3, 4, 5]
-idx = 3
-new_element = 9
-new_list = replace_in_list(my_list, idx, new_element)
+set_1 = { "Python", "C", "Javascript" }
+set_2 = { "Bash", "C", "Ruby", "Perl" }
+c_set = common_elements(set_1, set_2)
+print(sorted(list(c_set)))
 
-print(new_list)
+guillaume@ubuntu:~/0x04$ ./3-main.py
+['C']
+guillaume@ubuntu:~/0x04$ 
+```
+
+**Repo:**
+
+- GitHub repository: `alx-higher_level_programming`
+- Directory: `0x04-python-more_data_structures`
+- File: `3-common_elements.py`
+
+### 4\. Only differents
+mandatory
+
+Write a function that returns a set of all elements present in only one set.
+
+- Prototype: `def only_diff_elements(set_1, set_2):`
+- You are not allowed to import any module
+
+```
+guillaume@ubuntu:~/0x04$ cat 4-main.py
+#!/usr/bin/python3\
+only_diff_elements = __import__('4-only_diff_elements').only_diff_elements
+
+set_1 = { "Python", "C", "Javascript" }
+set_2 = { "Bash", "C", "Ruby", "Perl" }
+od_set = only_diff_elements(set_1, set_2)
+print(sorted(list(od_set)))
+
+guillaume@ubuntu:~/0x04$ ./4-main.py
+['Bash', 'Javascript', 'Perl', 'Python', 'Ruby']
+guillaume@ubuntu:~/0x04$
+```
+**Repo:**
+
+- GitHub repository: `alx-higher_level_programming`
+- Directory: `0x04-python-more_data_structures`
+- File: `4-only_diff_elements.py`
+
+### 5\. Number of keys
+mandatory
+
+Write a function that returns the number of keys in a dictionary.
+
+- Prototype: `def number_keys(a_dictionary):`
+- You are not allowed to import any module
+```
+guillaume@ubuntu:~/0x04$ cat 5-main.py
+#!/usr/bin/python3
+number_keys = __import__('5-number_keys').number_keys
+
+a_dictionary = { 'language': "C", 'number': 13, 'track': "Low level" }
+nb_keys = number_keys(a_dictionary)
+print("Number of keys: {:d}".format(nb_keys))
+
+guillaume@ubuntu:~/0x04$ ./5-main.py
+Number of keys: 3
+guillaume@ubuntu:~/0x04$
+```
+**Repo:**
+
+- GitHub repository: `alx-higher_level_programming`
+- Directory: `0x04-python-more_data_structures`
+- File: `5-number_keys.py`
+
+### 6\. Print sorted dictionary
+mandatory
+
+Write a function that prints a dictionary by ordered keys.
+
+    - Prototype: `def print_sorted_dictionary(a_dictionary):`
+    - You can assume that all keys are strings
+    - Keys should be sorted by alphabetic order
+    - Only sort keys of the first level (don't sort keys of a dictionary inside the main dictionary)
+    - Dictionary `values` can have any type
+    - You are not allowed to import any module
+```
+guillaume@ubuntu:~/0x04$ cat 6-main.py
+#!/usr/bin/python3
+print_sorted_dictionary = __import__('6-print_sorted_dictionary').print_sorted_dictionary
+
+a_dictionary = { 'language': "C", 'Number': 89, 'track': "Low level", 'ids': [1, 2, 3] }
+print_sorted_dictionary(a_dictionary)
+
+guillaume@ubuntu:~/0x04$ ./6-main.py
+Number: 89
+ids: [1, 2, 3]
+language: C
+track: Low level
+guillaume@ubuntu:~/0x04$
+```
+**Repo:**
+
+- GitHub repository: `alx-higher_level_programming`
+- Directory: `0x04-python-more_data_structures`
+- File: `6-print_sorted_dictionary.py`
+
+### 7\. Update dictionary
+mandatory
+
+Write a function that replaces or adds key/value in a dictionary.
+
+    - Prototype: `def update_dictionary(a_dictionary, key, value):`
+    - `key` argument will be always a string
+    - `value` argument will be any type
+    - If a key exists in the dictionary, the value will be replaced
+    - If a key doesn't exist in the dictionary, it will be created
+    - You are not allowed to import any module
+```
+guillaume@ubuntu:~/0x04$ cat 7-main.py
+#!/usr/bin/python3
+update_dictionary = __import__('7-update_dictionary').update_dictionary
+print_sorted_dictionary = __import__('6-print_sorted_dictionary').print_sorted_dictionary
+
+a_dictionary = { 'language': "C", 'number': 89, 'track': "Low level" }
+new_dict = update_dictionary(a_dictionary, 'language', "Python")
+print_sorted_dictionary(new_dict)
+print("--")
+print_sorted_dictionary(a_dictionary)
+
+print("--")
+print("--")
+
+new_dict = update_dictionary(a_dictionary, 'city', "San Francisco")
+print_sorted_dictionary(new_dict)
+print("--")
+print_sorted_dictionary(a_dictionary)
+
+guillaume@ubuntu:~/0x04$ ./7-main.py
+language: Python
+number: 89
+track: Low level
+--
+language: Python
+number: 89
+track: Low level
+--
+--
+city: San Francisco
+language: Python
+number: 89
+track: Low level
+--
+city: San Francisco
+language: Python
+number: 89
+track: Low level
+guillaume@ubuntu:~/0x04$
+```
+**Repo:**
+
+- GitHub repository: `alx-higher_level_programming`
+- Directory: `0x04-python-more_data_structures`
+- File: `7-update_dictionary.py`
+
+8\. Simple delete by key\
+mandatory
+
+Write a function that deletes a key in a dictionary.
+
+    Prototype: def simple_delete(a_dictionary, key=""):\
+    key argument will be always a string\
+    If a key doesn't exist, the dictionary won't change\
+    You are not allowed to import any module
+
+guillaume@ubuntu:~/0x04$ cat 8-main.py\
+#!/usr/bin/python3\
+simple_delete = __import__('8-simple_delete').simple_delete\
+print_sorted_dictionary = \\
+    __import__('6-print_sorted_dictionary').print_sorted_dictionary
+
+a_dictionary = { 'language': "C", 'Number': 89, 'track': "Low", 'ids': [1, 2, 3] }\
+new_dict = simple_delete(a_dictionary, 'track')\
+print_sorted_dictionary(a_dictionary)\
+print("--")\
+print_sorted_dictionary(new_dict)
+
+print("--")\
+print("--")\
+new_dict = simple_delete(a_dictionary, 'c_is_fun')\
+print_sorted_dictionary(a_dictionary)\
+print("--")\
+print_sorted_dictionary(new_dict)
+
+guillaume@ubuntu:~/0x04$ ./8-main.py\
+Number: 89\
+ids: [1, 2, 3]\
+language: C\
+--\
+Number: 89\
+ids: [1, 2, 3]\
+language: C\
+--\
+--\
+Number: 89\
+ids: [1, 2, 3]\
+language: C\
+--\
+Number: 89\
+ids: [1, 2, 3]\
+language: C\
+guillaume@ubuntu:~/0x04$
+
+Repo:
+
+    GitHub repository: alx-higher_level_programming\
+    Directory: 0x04-python-more_data_structures\
+    File: 8-simple_delete.py
+
+9\. Multiply by 2\
+mandatory
+
+Write a function that returns a new dictionary with all values multiplied by 2
+
+    Prototype: def multiply_by_2(a_dictionary):\
+    You can assume that all values are only integers\
+    Returns a new dictionary\
+    You are not allowed to import any module
+
+guillaume@ubuntu:~/0x04$ cat 9-main.py\
+#!/usr/bin/python3\
+multiply_by_2 = __import__('9-multiply_by_2').multiply_by_2\
+print_sorted_dictionary = \\
+    __import__('6-print_sorted_dictionary').print_sorted_dictionary
+
+a_dictionary = {'John': 12, 'Alex': 8, 'Bob': 14, 'Mike': 14, 'Molly': 16}\
+new_dict = multiply_by_2(a_dictionary)\
+print_sorted_dictionary(a_dictionary)\
+print("--")\
+print_sorted_dictionary(new_dict)
+
+guillaume@ubuntu:~/0x04$ ./9-main.py\
+Alex: 8\
+Bob: 14\
+John: 12\
+Mike: 14\
+Molly: 16\
+--\
+Alex: 16\
+Bob: 28\
+John: 24\
+Mike: 28\
+Molly: 32\
+guillaume@ubuntu:~/0x04$
+
+Repo:
+
+    GitHub repository: alx-higher_level_programming\
+    Directory: 0x04-python-more_data_structures\
+    File: 9-multiply_by_2.py
+
+10\. Best score\
+mandatory
+
+Write a function that returns a key with the biggest integer value.
+
+    Prototype: def best_score(a_dictionary):\
+    You can assume that all values are only integers\
+    If no score found, return None\
+    You can assume all students have a different score\
+    You are not allowed to import any module
+
+guillaume@ubuntu:~/0x04$ cat 10-main.py\
+#!/usr/bin/python3\
+best_score = __import__('10-best_score').best_score
+
+a_dictionary = {'John': 12, 'Bob': 14, 'Mike': 14, 'Molly': 16, 'Adam': 10}\
+best_key = best_score(a_dictionary)\
+print("Best score: {}".format(best_key))
+
+best_key = best_score(None)\
+print("Best score: {}".format(best_key))
+
+guillaume@ubuntu:~/0x04$ ./10-main.py\
+Best score: Molly\
+Best score: None\
+guillaume@ubuntu:~/0x04$
+
+Repo:
+
+    GitHub repository: alx-higher_level_programming\
+    Directory: 0x04-python-more_data_structures\
+    File: 10-best_score.py
+
+11\. Multiply by using map\
+mandatory
+
+Write a function that returns a list with all values multiplied by a number without using any loops.
+
+    Prototype: def multiply_list_map(my_list=[], number=0):\
+    Returns a new list:\
+        Same length as my_list\
+        Each value should be multiplied by number\
+    Initial list should not be modified\
+    You are not allowed to import any module\
+    You have to use map\
+    Your file should be max 3 lines
+
+guillaume@ubuntu:~/0x04$ cat 11-main.py\
+#!/usr/bin/python3\
+multiply_list_map = __import__('11-multiply_list_map').multiply_list_map
+
+my_list = [1, 2, 3, 4, 6]\
+new_list = multiply_list_map(my_list, 4)\
+print(new_list)\
 print(my_list)
 
-guillaume@ubuntu:~/0x03$ ./2-main.py
-[1, 2, 3, 9, 5]
-[1, 2, 3, 9, 5]
-guillaume@ubuntu:~/0x03$
+guillaume@ubuntu:~/0x04$ ./11-main.py\
+[4, 8, 12, 16, 24]\
+[1, 2, 3, 4, 6]\
+guillaume@ubuntu:~/0x04$
 
-```
+Repo:
 
-**Repo:**
+    GitHub repository: alx-higher_level_programming\
+    Directory: 0x04-python-more_data_structures\
+    File: 11-multiply_list_map.py
 
--   GitHub repository: `alx-higher_level_programming`
--   Directory: `0x04-python-more_data_structures`
--   File: `0-square_matrix_simple.py`
-
-### 3\. Print a list of integers... in reverse!
-
+12\. Roman to Integer\
 mandatory
 
-Write a function that prints all integers of a list, in reverse order.
+Technical interview preparation:
 
--   Prototype: `def print_reversed_list_integer(my_list=[]):`
--   Format: one integer per line. See example
+    You are not allowed to google anything\
+    Whiteboard first
+
+Create a function def roman_to_int(roman_string): that converts a Roman numeral to an integer.
+
+    You can assume the number will be between 1 to 3999.\
+    def roman_to_int(roman_string) must return an integer\
+    If the roman_string is not a string or None, return 0
+
+guillaume@ubuntu:~/0x04$ cat 12-main.py\
+#!/usr/bin/python3\
+""" Roman to Integer test file\
+"""\
+roman_to_int = __import__('12-roman_to_int').roman_to_int
+
+roman_number = "X"\
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+
+roman_number = "VII"\
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+
+roman_number = "IX"\
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+
+roman_number = "LXXXVII"\
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+
+roman_number = "DCCVII"\
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+
+guillaume@ubuntu:~/0x04$ ./12-main.py\
+X = 10\
+VII = 7\
+IX = 9\
+LXXXVII = 87\
+DCCVII = 707\
+guillaume@ubuntu:~/0x04$
+
+Repo:
+
+    GitHub repository: alx-higher_level_programming\
+    Directory: 0x04-python-more_data_structures\
+    File: 12-roman_to_int.py
+
+### 13\. Weighted average!
+
+#advanced
+
+Score: 0.00% (Checks completed: 0.00%)
+
+Write a function that returns the weighted average of all integers tuple `(<score>, <weight>)`
+
+-   Prototype: `def weight_average(my_list=[]):`
+-   Returns `0` if the list is empty
 -   You are not allowed to import any module
--   You can assume that the list only contains integers
--   You are not allowed to cast integers into strings
--   You have to use `str.format()` to print integers
 
 ```
-guillaume@ubuntu:~/0x03$ cat 3-main.py
+guillaume@ubuntu:~/0x04$ cat 100-main.py
 #!/usr/bin/python3
-print_reversed_list_integer = __import__('3-print_reversed_list_integer').print_reversed_list_integer
+weight_average = __import__('100-weight_average').weight_average
 
-my_list = [1, 2, 3, 4, 5]
-print_reversed_list_integer(my_list)
+my_list = [(1, 2), (2, 1), (3, 10), (4, 2)]
+# = ((1 * 2) + (2 * 1) + (3 * 10) + (4 * 2)) / (2 + 1 + 10 + 2)
+result = weight_average(my_list)
+print("Average: {:0.2f}".format(result))
 
-guillaume@ubuntu:~/0x03$ ./3-main.py
-5
-4
-3
-2
-1
-guillaume@ubuntu:~/0x03$
+guillaume@ubuntu:~/0x04$ ./100-main.py
+Average: 2.80
+guillaume@ubuntu:~/0x04$
 
 ```
 
@@ -211,97 +581,32 @@ guillaume@ubuntu:~/0x03$
 
 -   GitHub repository: `alx-higher_level_programming`
 -   Directory: `0x04-python-more_data_structures`
--   File: `0-square_matrix_simple.py`
+-   File: `100-weight_average.py`
 
-### 4\. Replace in a copy
+### 14\. Squared by using map
 
-mandatory
+#advanced
 
-Write a function that replaces an element in a list at a specific position without modifying the original list (like in C).
+Score: 0.00% (Checks completed: 0.00%)
 
--   Prototype: `def new_in_list(my_list, idx, element):`
--   If `idx` is negative, the function should return a copy of the original `list`
--   If `idx` is out of range (> of number of element in `my_list`), the function should return a copy of the original `list`
+Write a function that computes the square value of all integers of a matrix using `map`
+
+-   Prototype: `def square_matrix_map(matrix=[]):`
+-   `matrix` is a 2 dimensional array
+-   Returns a new matrix:
+    -   Same size as `matrix`
+    -   Each value should be the square of the value of the input
+-   Initial matrix should not be modified
 -   You are not allowed to import any module
--   You are not allowed to use `try/except`
+-   You have to use `map`
+-   You are not allowed to use `for` or `while`
+-   Your file should be max 3 lines
 
 ```
-guillaume@ubuntu:~/0x03$ cat 4-main.py
+guillaume@ubuntu:~/0x04$ cat 101-main.py
 #!/usr/bin/python3
-new_in_list = __import__('4-new_in_list').new_in_list
-
-my_list = [1, 2, 3, 4, 5]
-idx = 3
-new_element = 9
-new_list = new_in_list(my_list, idx, new_element)
-
-print(new_list)
-print(my_list)
-
-guillaume@ubuntu:~/0x03$ ./4-main.py
-[1, 2, 3, 9, 5]
-[1, 2, 3, 4, 5]
-guillaume@ubuntu:~/0x03$
-
-```
-
-**Repo:**
-
--   GitHub repository: `alx-higher_level_programming`
--   Directory: `0x04-python-more_data_structures`
--   File: `0-square_matrix_simple.py`
-
-### 5\. Can you C me now?
-
-mandatory
-
-Write a function that removes all characters `c` and `C` from a string.
-
--   Prototype: `def no_c(my_string):`
--   The function should return the new string
--   You are not allowed to import any module
--   You are not allowed to use `str.replace()`
-
-```
-guillaume@ubuntu:~/0x03$ cat 5-main.py
-#!/usr/bin/env python3
-no_c = __import__('5-no_c').no_c
-
-print(no_c("Best School"))
-print(no_c("Chicago"))
-print(no_c("C is fun!"))
-
-guillaume@ubuntu:~/0x03$ ./5-main.py
-Best Shool
-hiago
- is fun!
-guillaume@ubuntu:~/0x03$
-
-```
-
-**Repo:**
-
--   GitHub repository: `alx-higher_level_programming`
--   Directory: `0x04-python-more_data_structures`
--   File: `0-square_matrix_simple.py`
-
-### 6\. Lists of lists = Matrix
-
-mandatory
-
-Write a function that prints a matrix of integers.
-
--   Prototype: `def print_matrix_integer(matrix=[[]]):`
--   Format: see example
--   You are not allowed to import any module
--   You can assume that the list only contains integers
--   You are not allowed to cast integers into strings
--   You have to use `str.format()` to print integers
-
-```
-guillaume@ubuntu:~/0x03$ cat 6-main.py
-#!/usr/bin/python3
-print_matrix_integer = __import__('6-print_matrix_integer').print_matrix_integer
+square_matrix_map =\
+    __import__('101-square_matrix_map').square_matrix_map
 
 matrix = [
     [1, 2, 3],
@@ -309,17 +614,14 @@ matrix = [
     [7, 8, 9]
 ]
 
-print_matrix_integer(matrix)
-print("--")
-print_matrix_integer()
+new_matrix = square_matrix_map(matrix)
+print(new_matrix)
+print(matrix)
 
-guillaume@ubuntu:~/0x03$ ./6-main.py | cat -e
-1 2 3$
-4 5 6$
-7 8 9$
---$
-$
-guillaume@ubuntu:~/0x03$
+guillaume@ubuntu:~/0x04$ ./101-main.py
+[[1, 4, 9], [16, 25, 36], [49, 64, 81]]
+[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+guillaume@ubuntu:~/0x04$
 
 ```
 
@@ -327,476 +629,194 @@ guillaume@ubuntu:~/0x03$
 
 -   GitHub repository: `alx-higher_level_programming`
 -   Directory: `0x04-python-more_data_structures`
--   File: `0-square_matrix_simple.py`
+-   File: `101-square_matrix_map.py`
 
-### 7\. Tuples addition
-
-mandatory
-
-Write a function that adds 2 tuples.
-
--   Prototype: `def add_tuple(tuple_a=(), tuple_b=()):`
--   Returns a tuple with 2 integers:
-    -   The first element should be the addition of the first element of each argument
-    -   The second element should be the addition of the second element of each argument
--   You are not allowed to import any module
--   You can assume that the two tuples will only contain integers
--   If a tuple is smaller than 2, use the value `0` for each missing integer
--   If a tuple is bigger than 2, use only the first 2 integers
-
-```
-guillaume@ubuntu:~/0x03$ cat 7-main.py
-#!/usr/bin/python3
-add_tuple = __import__('7-add_tuple').add_tuple
-
-tuple_a = (1, 89)
-tuple_b = (88, 11)
-new_tuple = add_tuple(tuple_a, tuple_b)
-print(new_tuple)
-
-print(add_tuple(tuple_a, (1, )))
-print(add_tuple(tuple_a, ()))
-
-guillaume@ubuntu:~/0x03$ ./7-main.py
-(89, 100)
-(2, 89)
-(1, 89)
-guillaume@ubuntu:~/0x03$
-
-```
-
-**Repo:**
-
--   GitHub repository: `alx-higher_level_programming`
--   Directory: `0x04-python-more_data_structures`
--   File: `0-square_matrix_simple.py`
-
-### 8\. More returns!
-
-mandatory
-
-Write a function that returns a tuple with the length of a string and its first character.
-
--   Prototype: `def multiple_returns(sentence):`
--   If the sentence is empty, the first character should be equal to `None`
--   You are not allowed to import any module
-
-```
-guillaume@ubuntu:~/0x03$ cat 8-main.py
-#!/usr/bin/python3
-multiple_returns = __import__('8-multiple_returns').multiple_returns
-
-sentence = "At school, I learnt C!"
-length, first = multiple_returns(sentence)
-print("Length: {:d} - First character: {}".format(length, first))
-
-guillaume@ubuntu:~/0x03$ ./8-main.py
-Length: 22 - First character: A
-guillaume@ubuntu:~/0x03$
-
-```
-
-**Repo:**
-
--   GitHub repository: `alx-higher_level_programming`
--   Directory: `0x04-python-more_data_structures`
--   File: `0-square_matrix_simple.py`
-
-### 9\. Find the max
-
-mandatory
-
-Write a function that finds the biggest integer of a list.
-
--   Prototype: `def max_integer(my_list=[]):`
--   If the list is empty, return `None`
--   You can assume that the list only contains integers
--   You are not allowed to import any module
--   You are not allowed to use the builtin `max()`
-
-```
-guillaume@ubuntu:~/0x03$ cat 9-main.py
-#!/usr/bin/python3
-max_integer = __import__('9-max_integer').max_integer
-
-my_list = [1, 90, 2, 13, 34, 5, -13, 3]
-max_value = max_integer(my_list)
-print("Max: {}".format(max_value))
-
-guillaume@ubuntu:~/0x03$ ./9-main.py
-Max: 90
-guillaume@ubuntu:~/0x03$
-
-```
-
-**Repo:**
-
--   GitHub repository: `alx-higher_level_programming`
--   Directory: `0x04-python-more_data_structures`
--   File: `0-square_matrix_simple.py`
-
-### 10\. Only by 2
-
-mandatory
-
-Write a function that finds all multiples of 2 in a list.
-
--   Prototype: `def divisible_by_2(my_list=[]):`
--   Return a new list with `True` or `False`, depending on whether the integer at the same position in the original list is a multiple of 2
--   The new list should have the same size as the original list
--   You are not allowed to import any module
-
-```
-guillaume@ubuntu:~/0x03$ cat 10-main.py
-#!/usr/bin/python3
-divisible_by_2 = __import__('10-divisible_by_2').divisible_by_2
-
-my_list = [0, 1, 2, 3, 4, 5, 6]
-list_result = divisible_by_2(my_list)
-
-i = 0
-while i < len(list_result):
-    print("{:d} {:s} divisible by 2".format(my_list[i], "is" if list_result[i] else "is not"))
-    i += 1
-
-guillaume@ubuntu:~/0x03$ ./10-main.py
-0 is divisible by 2
-1 is not divisible by 2
-2 is divisible by 2
-3 is not divisible by 2
-4 is divisible by 2
-5 is not divisible by 2
-6 is divisible by 2
-guillaume@ubuntu:~/0x03$
-
-```
-
-**Repo:**
-
--   GitHub repository: `alx-higher_level_programming`
--   Directory: `0x04-python-more_data_structures`
--   File: `0-square_matrix_simple.py`
-
-### 11\. Delete at
-
-mandatory
-
-Write a function that deletes the item at a specific position in a list.
-
--   Prototype: `def delete_at(my_list=[], idx=0):`
--   If `idx` is negative or out of range, nothing change (returns the same list)
--   You are not allowed to use `pop()`
--   You are not allowed to import any module
-
-```
-guillaume@ubuntu:~/0x03$ cat 11-main.py
-#!/usr/bin/python3
-delete_at = __import__('11-delete_at').delete_at
-
-my_list = [1, 2, 3, 4, 5]
-idx = 3
-new_list = delete_at(my_list, idx)
-print(new_list)
-print(my_list)
-
-guillaume@ubuntu:~/0x03$ ./11-main.py
-[1, 2, 3, 5]
-[1, 2, 3, 5]
-guillaume@ubuntu:~/0x03$
-
-```
-
-**Repo:**
-
--   GitHub repository: `alx-higher_level_programming`
--   Directory: `0x04-python-more_data_structures`
--   File: `0-square_matrix_simple.py`
-
-### 12\. Switch
-
-mandatory
-
-Complete the source code in order to switch value of `a` and `b`
-
--   You can find the source code [here](https://alx-intranet.hbtn.io/rltoken/Iwhtw8ZaGLN7TIzodKGnYA "here")
--   Your code should be inserted where the comment is (line 4)
--   Your program should be exactly 5 lines long
-
-```
-guillaume@ubuntu:~/py/0x03$ ./12-switch.py
-a=10 - b=89
-guillaume@ubuntu:~/py/0x03$ wc -l 12-switch.py
-5 12-switch.py
-guillaume@ubuntu:~/py/0x03$
-
-```
-
-**Repo:**
-
--   GitHub repository: `alx-higher_level_programming`
--   Directory: `0x04-python-more_data_structures`
--   File: `0-square_matrix_simple.py`
-
-### 13\. Linked list palindrome
-
-mandatory
-
-**Technical interview preparation**:
-
--   You are not allowed to google anything
--   Whiteboard first
-
-Write a function in C that checks if a singly linked list is a palindrome.
-
--   Prototype: `int is_palindrome(listint_t **head);`
--   Return: `0` if it is not a palindrome, `1` if it is a palindrome
--   An empty list is considered a palindrome
-
-```
-carrie@ubuntu:0x03$ cat lists.h
-#ifndef LISTS_H
-#define LISTS_H
-
-/**
- * struct listint_s - singly linked list
- * @n: integer
- * @next: points to the next node
- *
- * Description: singly linked list node structure
- * for project
- */
-typedef struct listint_s
-{
-    int n;
-    struct listint_s *next;
-} listint_t;
-
-size_t print_listint(const listint_t *h);
-listint_t *add_nodeint_end(listint_t **head, const int n);
-void free_listint(listint_t *head);
-
-int is_palindrome(listint_t **head);
-
-#endif /* LISTS_H */
-carrie@ubuntu:0x03$
-
-```
-
-```
-carrie@ubuntu:0x03$ cat linked_lists.c
-#include <stdio.h>
-#include <stdlib.h>
-#include "lists.h"
-
-/**
- * print_listint - prints all elements of a listint_t list
- * @h: pointer to head of list
- * Return: number of nodes
- */
-size_t print_listint(const listint_t *h)
-{
-    const listint_t *current;
-    unsigned int n; /* number of nodes */
-
-    current = h;
-    n = 0;
-    while (current != NULL)
-    {
-        printf("%i\n", current->n);
-        current = current->next;
-        n++;
-    }
-
-    return (n);
-}
-
-/**
- * add_nodeint_end - adds a new node at the end of a listint_t list
- * @head: pointer to pointer of first node of listint_t list
- * @n: integer to be included in new node
- * Return: address of the new element or NULL if it fails
- */
-listint_t *add_nodeint_end(listint_t **head, const int n)
-{
-    listint_t *new;
-    listint_t *current;
-
-    current = *head;
-
-    new = malloc(sizeof(listint_t));
-    if (new == NULL)
-        return (NULL);
-
-    new->n = n;
-    new->next = NULL;
-
-    if (*head == NULL)
-        *head = new;
-    else
-    {
-        while (current->next != NULL)
-            current = current->next;
-        current->next = new;
-    }
-
-    return (new);
-}
-
-/**
- * free_listint - frees a listint_t list
- * @head: pointer to list to be freed
- * Return: void
- */
-void free_listint(listint_t *head)
-{
-    listint_t *current;
-
-    while (head != NULL)
-    {
-        current = head;
-        head = head->next;
-        free(current);
-    }
-}
-carrie@ubuntu:0x03$
-
-```
-
-```
-carrie@ubuntu:0x03$ cat 13-main.c
-#include <stdio.h>
-#include <stdlib.h>
-#include "lists.h"
-
-/**
- * main - check the code for
- *
- * Return: Always 0.
- */
-int main(void)
-{
-    listint_t *head;
-
-    head = NULL;
-    add_nodeint_end(&head, 1);
-    add_nodeint_end(&head, 17);
-    add_nodeint_end(&head, 972);
-    add_nodeint_end(&head, 50);
-    add_nodeint_end(&head, 98);
-    add_nodeint_end(&head, 98);
-    add_nodeint_end(&head, 50);
-    add_nodeint_end(&head, 972);
-    add_nodeint_end(&head, 17);
-    add_nodeint_end(&head, 1);
-    print_listint(head);
-
-    if (is_palindrome(&head) == 1)
-        printf("Linked list is a palindrome\n");
-    else
-        printf("Linked list is not a palindrome\n");
-
-    free_listint(head);
-
-    return (0);
-}
-carrie@ubuntu:0x03$
-
-```
-
-```
-carrie@ubuntu:0x03$ gcc -Wall -Werror -Wextra -pedantic 13-main.c linked_lists.c 13-is_palindrome.c -o palindrome
-carrie@ubuntu:0x03$ ./palindrome
-1
-17
-972
-50
-98
-98
-50
-972
-17
-1
-Linked list is a palindrome
-carrie@ubuntu:0x03$
-
-```
-
-**Repo:**
-
--   GitHub repository: `alx-higher_level_programming`
--   Directory: `0x04-python-more_data_structures`
--   File: `0-square_matrix_simple.py`
-
-### 14\. CPython #0: Python lists
+### 15\. Delete by value
 
 #advanced
 
-CPython is the reference implementation of the Python programming language. Written in C, CPython is the default and most widely used implementation of the language.\
-Since we now know a bit of C, we can look at what is happening under the hood of Python. Let's have fun with Python and C, and let's look at what makes Python so easy to use.
+Score: 0.00% (Checks completed: 0.00%)
 
--   All your files will be interpreted/compiled on Ubuntu 14.04 LTS
+Write a function that deletes keys with a specific value in a dictionary.
 
-![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/7e7834b535261d05532fb80a9304f7051c4ad7ac.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20211121%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20211121T180457Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=665e724d14ace604a30295cda2420ee7685b2123a40ff31d766039451a58447b)
-
-Create a C function that prints some basic info about Python lists.
-
--   Prototype: `void print_python_list_info(PyObject *p);`
--   Format: see example
--   Python version: 3.4
--   Your shared library will be compiled with this command line: `gcc -Wall -Werror -Wextra -pedantic -std=c99 -shared -Wl,-soname,PyList -o libPyList.so -fPIC -I/usr/include/python3.4 100-print_python_list_info.c`
--   OS: `Ubuntu 14.04 LTS`
--   Start by reading:
-    -   listobject.h
-    -   object.h
-    -   [Common Object Structures](https://alx-intranet.hbtn.io/rltoken/jmRTk4m1VSzjsu3QTGaC6w "Common Object Structures")
-    -   [List Objects](https://alx-intranet.hbtn.io/rltoken/7V1HlQRESjCqrKrw_O_Urw "List Objects")
+-   Prototype: `def complex_delete(a_dictionary, value):`
+-   If the value doesn't exist, the dictionary won't change
+-   All keys having the searched value have to be deleted
+-   You are not allowed to import any module
 
 ```
-julien@ubuntu:~/CPython$ gcc -Wall -Werror -Wextra -pedantic -std=c99 -shared -Wl,-soname,PyList -o libPyList.so -fPIC -I/usr/include/python3.4 100-print_python_list_info.c
-julien@ubuntu:~/CPython$ cat 100-test_lists.py
+guillaume@ubuntu:~/0x04$ cat 102-main.py
+#!/usr/bin/python3
+complex_delete = __import__('102-complex_delete').complex_delete
+print_sorted_dictionary =\
+    __import__('6-print_sorted_dictionary').print_sorted_dictionary
+
+a_dictionary = {'lang': "C", 'track': "Low", 'pref': "C", 'ids': [1, 2, 3]}
+new_dict = complex_delete(a_dictionary, 'C')
+print_sorted_dictionary(a_dictionary)
+print("--")
+print_sorted_dictionary(new_dict)
+
+print("--")
+print("--")
+new_dict = complex_delete(a_dictionary, 'c_is_fun')
+print_sorted_dictionary(a_dictionary)
+print("--")
+print_sorted_dictionary(new_dict)
+
+guillaume@ubuntu:~/0x04$ ./102-main.py
+ids: [1, 2, 3]
+track: Low
+--
+ids: [1, 2, 3]
+track: Low
+--
+--
+ids: [1, 2, 3]
+track: Low
+--
+ids: [1, 2, 3]
+track: Low
+guillaume@ubuntu:~/0x04$
+
+```
+
+**Repo:**
+
+-   GitHub repository: `alx-higher_level_programming`
+-   Directory: `0x04-python-more_data_structures`
+-   File: `102-complex_delete.py`
+
+### 16\. CPython #1: PyBytesObject
+
+#advanced
+
+Score: 0.00% (Checks completed: 0.00%)
+
+Create two C functions that print some basic info about Python lists and Python bytes objects.
+
+![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/8030f8429cb90b3fc145b994112e2dae8c4030e0.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20211125%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20211125T225134Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=0f7911ec20cb117600c49c6ceb74e5bb48385e44aae6f75f1455b4fed69172dd)\
+Python lists:
+
+-   Prototype: `void print_python_list(PyObject *p);`
+-   Format: see example
+
+Python bytes:
+
+-   Prototype: `void print_python_bytes(PyObject *p);`
+-   Format: see example
+-   Line "first X bytes": print a maximum of 10 bytes
+-   If `p` is not a valid `PyBytesObject`, print an error message (see example)
+-   Read `/usr/include/python3.4/bytesobject.h`
+
+About:
+
+-   Python version: 3.4
+-   Your shared library will be compiled with this command line: `gcc -Wall -Werror -Wextra -pedantic -std=c99 -shared -Wl,-soname,libPython.so -o libPython.so -fPIC -I/usr/include/python3.4 103-python.c`
+-   You are not allowed to use the following macros/functions:
+    -   `Py_SIZE`
+    -   `Py_TYPE`
+    -   `PyList_GetItem`
+    -   `PyBytes_AS_STRING`
+    -   `PyBytes_GET_SIZE`
+
+```
+julien@ubuntu:~/CPython$ python3 --version
+Python 3.4.3
+julien@ubuntu:~/CPython$ gcc -Wall -Werror -Wextra -pedantic -std=c99 -shared -Wl,-soname,libPython.so -o libPython.so -fPIC -I/usr/include/python3.4 103-python.c
+julien@ubuntu:~/CPython$ cat 103-tests.py
 import ctypes
 
-lib = ctypes.CDLL('./libPyList.so')
-lib.print_python_list_info.argtypes = [ctypes.py_object]
-l = ['hello', 'World']
-lib.print_python_list_info(l)
+lib = ctypes.CDLL('./libPython.so')
+lib.print_python_list.argtypes = [ctypes.py_object]
+lib.print_python_bytes.argtypes = [ctypes.py_object]
+s = b"Hello"
+lib.print_python_bytes(s);
+b = b'\xff\xf8\x00\x00\x00\x00\x00\x00';
+lib.print_python_bytes(b);
+b = b'What does the \'b\' character do in front of a string literal?';
+lib.print_python_bytes(b);
+l = [b'Hello', b'World']
+lib.print_python_list(l)
 del l[1]
-lib.print_python_list_info(l)
-l = l + [4, 5, 6.0, (9, 8), [9, 8, 1024], "My string"]
-lib.print_python_list_info(l)
+lib.print_python_list(l)
+l = l + [4, 5, 6.0, (9, 8), [9, 8, 1024], b"Holberton", "Betty"]
+lib.print_python_list(l)
 l = []
-lib.print_python_list_info(l)
+lib.print_python_list(l)
 l.append(0)
-lib.print_python_list_info(l)
+lib.print_python_list(l)
 l.append(1)
 l.append(2)
 l.append(3)
 l.append(4)
-lib.print_python_list_info(l)
+lib.print_python_list(l)
 l.pop()
-lib.print_python_list_info(l)
-julien@ubuntu:~/CPython$ python3 100-test_lists.py
+lib.print_python_list(l)
+l = ["Holberton"]
+lib.print_python_list(l)
+lib.print_python_bytes(l);
+julien@ubuntu:~/CPython$ python3 103-tests.py
+[.] bytes object info
+  size: 5
+  trying string: Hello
+  first 6 bytes: 48 65 6c 6c 6f 00
+[.] bytes object info
+  size: 8
+  trying string: �
+  first 9 bytes: ff f8 00 00 00 00 00 00 00
+[.] bytes object info
+  size: 60
+  trying string: What does the 'b' character do in front of a string literal?
+  first 10 bytes: 57 68 61 74 20 64 6f 65 73 20
+[*] Python list info
 [*] Size of the Python List = 2
 [*] Allocated = 2
-Element 0: str
-Element 1: str
+Element 0: bytes
+[.] bytes object info
+  size: 5
+  trying string: Hello
+  first 6 bytes: 48 65 6c 6c 6f 00
+Element 1: bytes
+[.] bytes object info
+  size: 5
+  trying string: World
+  first 6 bytes: 57 6f 72 6c 64 00
+[*] Python list info
 [*] Size of the Python List = 1
 [*] Allocated = 2
-Element 0: str
-[*] Size of the Python List = 7
-[*] Allocated = 7
-Element 0: str
+Element 0: bytes
+[.] bytes object info
+  size: 5
+  trying string: Hello
+  first 6 bytes: 48 65 6c 6c 6f 00
+[*] Python list info
+[*] Size of the Python List = 8
+[*] Allocated = 8
+Element 0: bytes
+[.] bytes object info
+  size: 5
+  trying string: Hello
+  first 6 bytes: 48 65 6c 6c 6f 00
 Element 1: int
 Element 2: int
 Element 3: float
 Element 4: tuple
 Element 5: list
-Element 6: str
+Element 6: bytes
+[.] bytes object info
+  size: 9
+  trying string: Holberton
+  first 10 bytes: 48 6f 6c 62 65 72 74 6f 6e 00
+Element 7: str
+[*] Python list info
 [*] Size of the Python List = 0
 [*] Allocated = 0
+[*] Python list info
 [*] Size of the Python List = 1
 [*] Allocated = 4
 Element 0: int
+[*] Python list info
 [*] Size of the Python List = 5
 [*] Allocated = 8
 Element 0: int
@@ -804,13 +824,20 @@ Element 1: int
 Element 2: int
 Element 3: int
 Element 4: int
+[*] Python list info
 [*] Size of the Python List = 4
 [*] Allocated = 8
 Element 0: int
 Element 1: int
 Element 2: int
 Element 3: int
-julien@CPython:~/CPython$
+[*] Python list info
+[*] Size of the Python List = 1
+[*] Allocated = 1
+Element 0: str
+[.] bytes object info
+  [ERROR] Invalid Bytes Object
+julien@ubuntu:~/CPython$
 
 ```
 
@@ -818,4 +845,4 @@ julien@CPython:~/CPython$
 
 -   GitHub repository: `alx-higher_level_programming`
 -   Directory: `0x04-python-more_data_structures`
--   File: `0-square_matrix_simple.py`
+-   File: `103-python.c`
